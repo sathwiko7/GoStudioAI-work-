@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#080b11] text-slate-100 antialiased selection:bg-indigo-500/30 selection:text-indigo-200;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Custom glowing effects and glassmorphic styling */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: rgba(23, 31, 48, 0.85);
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+}
+
+.glow-button {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.glow-button:hover {
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+  transform: translateY(-1px);
+}
+.glow-button:active {
+  transform: translateY(1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0c1017;
+}
+::-webkit-scrollbar-thumb {
+  background: #222f44;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #33435e;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.animate-shimmer {
+  animation: shimmer 1.8s infinite;
+}
